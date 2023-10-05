@@ -7,8 +7,8 @@
 
 namespace Project1 {
 
-	using namespace std; // пространство имён стандартной библиотеки
-	using namespace::System::Runtime::InteropServices; // для поддержки COM - взаимодействия и преобразования данных из оперативной памяти в формат для хранения и передачи данных
+	using namespace std; // РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјС‘РЅ СЃС‚Р°РЅРґР°СЂС‚РЅРѕР№ Р±РёР±Р»РёРѕС‚РµРєРё
+	using namespace::System::Runtime::InteropServices; // РґР»СЏ РїРѕРґРґРµСЂР¶РєРё COM - РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Рё РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ РґР°РЅРЅС‹С… РёР· РѕРїРµСЂР°С‚РёРІРЅРѕР№ РїР°РјСЏС‚Рё РІ С„РѕСЂРјР°С‚ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Рё РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С…
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -16,15 +16,15 @@ namespace Project1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	std::ifstream FileStreamInput; // входной поток
-	std::ofstream FileStreamOutput; // выходной поток
-	std::string BufferString; // переменная для временной работы со строками
-	const char* FileNameIn; // символьный массив для имени файла
-	char* BufferChar; // символьный массив для строк
-	int i; // счётчик строк
+	std::ifstream FileStreamInput; // РІС…РѕРґРЅРѕР№ РїРѕС‚РѕРє
+	std::ofstream FileStreamOutput; // РІС‹С…РѕРґРЅРѕР№ РїРѕС‚РѕРє
+	std::string BufferString; // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РІСЂРµРјРµРЅРЅРѕР№ СЂР°Р±РѕС‚С‹ СЃРѕ СЃС‚СЂРѕРєР°РјРё
+	const char* FileNameIn; // СЃРёРјРІРѕР»СЊРЅС‹Р№ РјР°СЃСЃРёРІ РґР»СЏ РёРјРµРЅРё С„Р°Р№Р»Р°
+	char* BufferChar; // СЃРёРјРІРѕР»СЊРЅС‹Р№ РјР°СЃСЃРёРІ РґР»СЏ СЃС‚СЂРѕРє
+	int i; // СЃС‡С‘С‚С‡РёРє СЃС‚СЂРѕРє
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -33,24 +33,24 @@ namespace Project1 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 	public:
-		MyForm1^ Mf1 = gcnew MyForm1; // создание объекта для нового модального окна
+		MyForm1^ Mf1 = gcnew MyForm1; // СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РґР»СЏ РЅРѕРІРѕРіРѕ РјРѕРґР°Р»СЊРЅРѕРіРѕ РѕРєРЅР°
 
-		String^ FileN = ""; // имя файла
-		String^ FileE = ""; // расширение файла
+		String^ FileN = ""; // РёРјСЏ С„Р°Р№Р»Р°
+		String^ FileE = ""; // СЂР°СЃС€РёСЂРµРЅРёРµ С„Р°Р№Р»Р°
 		String^ LineS = "";
 	private: System::Windows::Forms::ToolStrip^ toolStrip1;
 	private: System::Windows::Forms::ToolStripProgressBar^ toolStripProgressBar1;
 	public:
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -61,36 +61,36 @@ namespace Project1 {
 		}
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	protected:
-	private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ новыйToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ открытьToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ сохранитьToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ сохранитьКакToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ закрытьToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ С„Р°Р№Р»ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РЅРѕРІС‹Р№ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РѕС‚РєСЂС‹С‚СЊToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ Р·Р°РєСЂС‹С‚СЊToolStripMenuItem;
 
 
 	protected:
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->файлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->новыйToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->открытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->сохранитьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->сохранитьКакToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->закрытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->С„Р°Р№Р»ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РЅРѕРІС‹Р№ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->Р·Р°РєСЂС‹С‚СЊToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
@@ -102,57 +102,57 @@ namespace Project1 {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->файлToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->С„Р°Р№Р»ToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(748, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// файлToolStripMenuItem
+			// С„Р°Р№Р»ToolStripMenuItem
 			// 
-			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
-				this->новыйToolStripMenuItem,
-					this->открытьToolStripMenuItem, this->сохранитьToolStripMenuItem, this->сохранитьКакToolStripMenuItem, this->закрытьToolStripMenuItem
+			this->С„Р°Р№Р»ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+				this->РЅРѕРІС‹Р№ToolStripMenuItem,
+					this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem, this->СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem, this->СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem, this->Р·Р°РєСЂС‹С‚СЊToolStripMenuItem
 			});
-			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
-			this->файлToolStripMenuItem->Size = System::Drawing::Size(48, 20);
-			this->файлToolStripMenuItem->Text = L"Файл";
+			this->С„Р°Р№Р»ToolStripMenuItem->Name = L"С„Р°Р№Р»ToolStripMenuItem";
+			this->С„Р°Р№Р»ToolStripMenuItem->Size = System::Drawing::Size(48, 20);
+			this->С„Р°Р№Р»ToolStripMenuItem->Text = L"Р¤Р°Р№Р»";
 			// 
-			// новыйToolStripMenuItem
+			// РЅРѕРІС‹Р№ToolStripMenuItem
 			// 
-			this->новыйToolStripMenuItem->Name = L"новыйToolStripMenuItem";
-			this->новыйToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->новыйToolStripMenuItem->Text = L"Новый";
-			this->новыйToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::новыйToolStripMenuItem_Click);
+			this->РЅРѕРІС‹Р№ToolStripMenuItem->Name = L"РЅРѕРІС‹Р№ToolStripMenuItem";
+			this->РЅРѕРІС‹Р№ToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->РЅРѕРІС‹Р№ToolStripMenuItem->Text = L"РќРѕРІС‹Р№";
+			this->РЅРѕРІС‹Р№ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РЅРѕРІС‹Р№ToolStripMenuItem_Click);
 			// 
-			// открытьToolStripMenuItem
+			// РѕС‚РєСЂС‹С‚СЊToolStripMenuItem
 			// 
-			this->открытьToolStripMenuItem->Name = L"открытьToolStripMenuItem";
-			this->открытьToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->открытьToolStripMenuItem->Text = L"Открыть";
-			this->открытьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::открытьToolStripMenuItem_Click);
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Name = L"РѕС‚РєСЂС‹С‚СЊToolStripMenuItem";
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Text = L"РћС‚РєСЂС‹С‚СЊ";
+			this->РѕС‚РєСЂС‹С‚СЊToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РѕС‚РєСЂС‹С‚СЊToolStripMenuItem_Click);
 			// 
-			// сохранитьToolStripMenuItem
+			// СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem
 			// 
-			this->сохранитьToolStripMenuItem->Name = L"сохранитьToolStripMenuItem";
-			this->сохранитьToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->сохранитьToolStripMenuItem->Text = L"Сохранить";
-			this->сохранитьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сохранитьToolStripMenuItem_Click);
+			this->СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem->Name = L"СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem";
+			this->СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem->Text = L"РЎРѕС…СЂР°РЅРёС‚СЊ";
+			this->СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem_Click);
 			// 
-			// сохранитьКакToolStripMenuItem
+			// СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem
 			// 
-			this->сохранитьКакToolStripMenuItem->Name = L"сохранитьКакToolStripMenuItem";
-			this->сохранитьКакToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->сохранитьКакToolStripMenuItem->Text = L"Сохранить как...";
-			this->сохранитьКакToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сохранитьКакToolStripMenuItem_Click);
+			this->СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem->Name = L"СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem";
+			this->СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem->Text = L"РЎРѕС…СЂР°РЅРёС‚СЊ РєР°Рє...";
+			this->СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem_Click);
 			// 
-			// закрытьToolStripMenuItem
+			// Р·Р°РєСЂС‹С‚СЊToolStripMenuItem
 			// 
-			this->закрытьToolStripMenuItem->Name = L"закрытьToolStripMenuItem";
-			this->закрытьToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->закрытьToolStripMenuItem->Text = L"Закрыть";
-			this->закрытьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::закрытьToolStripMenuItem_Click);
+			this->Р·Р°РєСЂС‹С‚СЊToolStripMenuItem->Name = L"Р·Р°РєСЂС‹С‚СЊToolStripMenuItem";
+			this->Р·Р°РєСЂС‹С‚СЊToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->Р·Р°РєСЂС‹С‚СЊToolStripMenuItem->Text = L"Р—Р°РєСЂС‹С‚СЊ";
+			this->Р·Р°РєСЂС‹С‚СЊToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::Р·Р°РєСЂС‹С‚СЊToolStripMenuItem_Click);
 			// 
 			// richTextBox1
 			// 
@@ -200,67 +200,67 @@ namespace Project1 {
 
 		}
 #pragma endregion
-	private: System::Void новыйToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		FileN = ""; // очищение имени файла
-		richTextBox1->Clear(); // очищение текстового поля
-		toolStripProgressBar1->Value = 0; // прогресс бар в 0
+	private: System::Void РЅРѕРІС‹Р№ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		FileN = ""; // РѕС‡РёС‰РµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р°
+		richTextBox1->Clear(); // РѕС‡РёС‰РµРЅРёРµ С‚РµРєСЃС‚РѕРІРѕРіРѕ РїРѕР»СЏ
+		toolStripProgressBar1->Value = 0; // РїСЂРѕРіСЂРµСЃСЃ Р±Р°СЂ РІ 0
 	}
-	private: System::Void закрытьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		Application::Exit(); // закрытие главного окна
+	private: System::Void Р·Р°РєСЂС‹С‚СЊToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		Application::Exit(); // Р·Р°РєСЂС‹С‚РёРµ РіР»Р°РІРЅРѕРіРѕ РѕРєРЅР°
 	}
-	private: System::Void открытьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		openFileDialog1->Filter = "Rtf files(*.rtf)|*.rtf|Txt files(*.txt)|*.txt"; //фильтры выбора файлов
-		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) // если нажата кнопка ок в открывшимся окне выбора
+	private: System::Void РѕС‚РєСЂС‹С‚СЊToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		openFileDialog1->Filter = "Rtf files(*.rtf)|*.rtf|Txt files(*.txt)|*.txt"; //С„РёР»СЊС‚СЂС‹ РІС‹Р±РѕСЂР° С„Р°Р№Р»РѕРІ
+		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) // РµСЃР»Рё РЅР°Р¶Р°С‚Р° РєРЅРѕРїРєР° РѕРє РІ РѕС‚РєСЂС‹РІС€РёРјСЃСЏ РѕРєРЅРµ РІС‹Р±РѕСЂР°
 		{
-			FileN = openFileDialog1->FileName; // получение имени
-			FileE = openFileDialog1->FileName->Substring(openFileDialog1->FileName->Length - 3, 3); // получение расширения
-			if ((FileE == "rtf") || (FileE == "Rtf") || (FileE == "RTF")) // если *.rtf
+			FileN = openFileDialog1->FileName; // РїРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё
+			FileE = openFileDialog1->FileName->Substring(openFileDialog1->FileName->Length - 3, 3); // РїРѕР»СѓС‡РµРЅРёРµ СЂР°СЃС€РёСЂРµРЅРёСЏ
+			if ((FileE == "rtf") || (FileE == "Rtf") || (FileE == "RTF")) // РµСЃР»Рё *.rtf
 			{
-				richTextBox1->LoadFile(FileN); // загрузка данных в текстовое поле
+				richTextBox1->LoadFile(FileN); // Р·Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РІ С‚РµРєСЃС‚РѕРІРѕРµ РїРѕР»Рµ
 			}
-			if ((FileE == "txt") || (FileE == "Txt") || (FileE == "TXT")) // если *.rtf
+			if ((FileE == "txt") || (FileE == "Txt") || (FileE == "TXT")) // РµСЃР»Рё *.rtf
 			{
-				FileNameIn = (const char*)(Marshal::StringToHGlobalAnsi(FileN)).ToPointer(); // копирование имени файла в формате ANSI
-				FileStreamInput.open(FileNameIn, std::ios::in); // открытие потока для чтения
-				while (!FileStreamInput.eof()) // цикл до физического конца файла
+				FileNameIn = (const char*)(Marshal::StringToHGlobalAnsi(FileN)).ToPointer(); // РєРѕРїРёСЂРѕРІР°РЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° РІ С„РѕСЂРјР°С‚Рµ ANSI
+				FileStreamInput.open(FileNameIn, std::ios::in); // РѕС‚РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР° РґР»СЏ С‡С‚РµРЅРёСЏ
+				while (!FileStreamInput.eof()) // С†РёРєР» РґРѕ С„РёР·РёС‡РµСЃРєРѕРіРѕ РєРѕРЅС†Р° С„Р°Р№Р»Р°
 				{
-					std::getline(FileStreamInput, BufferString); // получение строки из потока
-					LineS = gcnew String(BufferString.c_str()); // преобразование в String
-					richTextBox1->Text = richTextBox1->Text + " " + LineS + "\n"; // загрузка строки в поле
+					std::getline(FileStreamInput, BufferString); // РїРѕР»СѓС‡РµРЅРёРµ СЃС‚СЂРѕРєРё РёР· РїРѕС‚РѕРєР°
+					LineS = gcnew String(BufferString.c_str()); // РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РІ String
+					richTextBox1->Text = richTextBox1->Text + " " + LineS + "\n"; // Р·Р°РіСЂСѓР·РєР° СЃС‚СЂРѕРєРё РІ РїРѕР»Рµ
 				}
-				FileStreamInput.close(); // закрытие потока чтения файла
-				Marshal::FreeHGlobal(IntPtr((void*)FileNameIn)); // освобождение памяти от преобразования строки
+				FileStreamInput.close(); // Р·Р°РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР° С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р°
+				Marshal::FreeHGlobal(IntPtr((void*)FileNameIn)); // РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё РѕС‚ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ СЃС‚СЂРѕРєРё
 			}
 		}
 	}
-	private: System::Void сохранитьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		toolStripProgressBar1->Value = 0; // установка значения прогресс бара
-		if (FileN == "") // если нет имкени файла
+	private: System::Void СЃРѕС…СЂР°РЅРёС‚СЊToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		toolStripProgressBar1->Value = 0; // СѓСЃС‚Р°РЅРѕРІРєР° Р·РЅР°С‡РµРЅРёСЏ РїСЂРѕРіСЂРµСЃСЃ Р±Р°СЂР°
+		if (FileN == "") // РµСЃР»Рё РЅРµС‚ РёРјРєРµРЅРё С„Р°Р№Р»Р°
 		{
 			saveFileDialog1->Filter = "Rtf files(*.rtf)|*.rtf|Txt files(*.txt)|*.txt";
 			if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 			{
-				if (saveFileDialog1->FilterIndex == 1) // если rtf
+				if (saveFileDialog1->FilterIndex == 1) // РµСЃР»Рё rtf
 				{
 					FileN = saveFileDialog1->FileName;
-					richTextBox1->SaveFile(FileN); // сохранение файла с необходимым именем
+					richTextBox1->SaveFile(FileN); // СЃРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»Р° СЃ РЅРµРѕР±С…РѕРґРёРјС‹Рј РёРјРµРЅРµРј
 				}
-				if (saveFileDialog1->FilterIndex == 2) // если txt
+				if (saveFileDialog1->FilterIndex == 2) // РµСЃР»Рё txt
 				{
 					FileN = saveFileDialog1->FileName;
 					FileNameIn = (const char*)(Marshal::StringToHGlobalAnsi(FileN)).ToPointer();
-					FileStreamOutput.open(FileNameIn, std::ios::out); // открытие потока записи
+					FileStreamOutput.open(FileNameIn, std::ios::out); // РѕС‚РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР° Р·Р°РїРёСЃРё
 					i = 0;
-					while (i < richTextBox1->Lines->Length) // до тех пор пока не кончились строки в поле
+					while (i < richTextBox1->Lines->Length) // РґРѕ С‚РµС… РїРѕСЂ РїРѕРєР° РЅРµ РєРѕРЅС‡РёР»РёСЃСЊ СЃС‚СЂРѕРєРё РІ РїРѕР»Рµ
 					{
-						LineS = gcnew String(richTextBox1->Lines[i] + "\n"); // занесение символов в строку
-						BufferChar = new char[LineS->Length]; // созданеие массива символов
+						LineS = gcnew String(richTextBox1->Lines[i] + "\n"); // Р·Р°РЅРµСЃРµРЅРёРµ СЃРёРјРІРѕР»РѕРІ РІ СЃС‚СЂРѕРєСѓ
+						BufferChar = new char[LineS->Length]; // СЃРѕР·РґР°РЅРµРёРµ РјР°СЃСЃРёРІР° СЃРёРјРІРѕР»РѕРІ
 						i++;
 						BufferChar = (char*)(void*)Marshal::StringToHGlobalAnsi(LineS);
-						FileStreamOutput.write(BufferChar, LineS->Length); // вывод массива символов в поток
-						Marshal::FreeHGlobal(IntPtr((void*)BufferChar)); // освобождение памяти
+						FileStreamOutput.write(BufferChar, LineS->Length); // РІС‹РІРѕРґ РјР°СЃСЃРёРІР° СЃРёРјРІРѕР»РѕРІ РІ РїРѕС‚РѕРє
+						Marshal::FreeHGlobal(IntPtr((void*)BufferChar)); // РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё
 					}
-					FileStreamOutput.close(); // закрытие потока
+					FileStreamOutput.close(); // Р·Р°РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР°
 					Marshal::FreeHGlobal(IntPtr((void*)FileNameIn));
 				}
 			}
@@ -272,8 +272,8 @@ namespace Project1 {
 				}
 				if ((FileE == "txt") || (FileE == "Txt") || (FileE == "TXT"))
 				{
-					FileNameIn = (const char*)(Marshal::StringToHGlobalAnsi(FileN)).ToPointer(); // копирование строки в формате ANSI
-					FileStreamOutput.open(FileNameIn, std::ios::out); // открытие потока
+					FileNameIn = (const char*)(Marshal::StringToHGlobalAnsi(FileN)).ToPointer(); // РєРѕРїРёСЂРѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё РІ С„РѕСЂРјР°С‚Рµ ANSI
+					FileStreamOutput.open(FileNameIn, std::ios::out); // РѕС‚РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР°
 					i = 0;
 					while (i < richTextBox1->Lines->Length)
 					{
@@ -290,7 +290,7 @@ namespace Project1 {
 		}
 		toolStripProgressBar1->Value = 100;
 	};
-	private: System::Void сохранитьКакToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void СЃРѕС…СЂР°РЅРёС‚СЊРљР°РєToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		toolStripProgressBar1->Value = 0;
 		saveFileDialog1->Filter = "Rtf files(*.rtf)|*.rtf|Txt files(*.txt)|*.txt";
 		if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
