@@ -1,0 +1,5 @@
+E:\comanddev\ProjectPO1\x64\Debug\ProjectPO1.vcxproj.AssemblyReference.cache
+E:\comanddev\ProjectPO1\x64\Debug\ProjectPO1.exe
+E:\comanddev\ProjectPO1\x64\Debug\ProjectPO1.MyForm.resources
+E:\comanddev\ProjectPO1\x64\Debug\ProjectPO1.MyForm1.resources
+E:\comanddev\ProjectPO1\x64\Debug\ProjectPO1.vcxproj.GenerateResource.cache
