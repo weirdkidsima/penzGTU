@@ -1,7 +1,7 @@
 #pragma once
 
-#include "math.h" //мат. функции
-#include "time.h" // дата и время
+#include "math.h" //РјР°С‚. С„СѓРЅРєС†РёРё
+#include "time.h" // РґР°С‚Р° Рё РІСЂРµРјСЏ
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,12 +14,12 @@ namespace ProjectPO1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace std;//пространство имён стандартной библиотеки
-	using namespace System::Runtime::InteropServices; /// Пространство имён для поддержки СОМвзаимодействия и преобразования данных из формата оперативной памяти в формат для хранения и передачи данных(маршаллинг)
+	using namespace std;//РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјС‘РЅ СЃС‚Р°РЅРґР°СЂС‚РЅРѕР№ Р±РёР±Р»РёРѕС‚РµРєРё
+	using namespace System::Runtime::InteropServices; /// РџСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјС‘РЅ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РЎРћРњРІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Рё РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ РґР°РЅРЅС‹С… РёР· С„РѕСЂРјР°С‚Р° РѕРїРµСЂР°С‚РёРІРЅРѕР№ РїР°РјСЏС‚Рё РІ С„РѕСЂРјР°С‚ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ Рё РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С…(РјР°СЂС€Р°Р»Р»РёРЅРі)
 
 
 	/// <summary>
-	/// Сводка для MyForm1
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm1
 	/// </summary>
 	public ref class MyForm1 : public System::Windows::Forms::Form
 	{
@@ -28,31 +28,35 @@ namespace ProjectPO1 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
-			BT = System::DateTime(); // Создание объекта Время начала процесса класса DateTime
-			FT = System::DateTime(); // Создание объекта Время окончания процесса класса DateTime
+			BT = System::DateTime(); // РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р° РїСЂРѕС†РµСЃСЃР° РєР»Р°СЃСЃР° DateTime
+			FT = System::DateTime(); // РЎРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РїСЂРѕС†РµСЃСЃР° РєР»Р°СЃСЃР° DateTime
 		}
 
 	public:
-		double MaxX, // Максимальное значение аргумента Х
-				MinX, // Минимальное значение аргумента X
-				MaxY, // Максимальное значение аргумента Y
-				MinY, // Минимальное значение аргумента Y
-				ShagX, // Шаг изменения аргумента X
-				ShagY; // шаг изменения аргумента X
-		int		NN, // Размерность цикла
-				I1; // Счётчик цикла
-		double *PXT, // Массив аргументов X
-				**PZT, // массив значений функций
-				*PYT; // Массив значений функции Y
-		DateTime BT, // Время начала процесса
-				FT; // Время окончания процесса
-		TimeSpan STF; // Длительность процесса
+		double MaxX, // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Р°СЂРіСѓРјРµРЅС‚Р° РҐ
+				MinX, // РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Р°СЂРіСѓРјРµРЅС‚Р° X
+				MaxY, // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Р°СЂРіСѓРјРµРЅС‚Р° Y
+				MinY, // РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Р°СЂРіСѓРјРµРЅС‚Р° Y
+				ShagX, // РЁР°Рі РёР·РјРµРЅРµРЅРёСЏ Р°СЂРіСѓРјРµРЅС‚Р° X
+				ShagY; // С€Р°Рі РёР·РјРµРЅРµРЅРёСЏ Р°СЂРіСѓРјРµРЅС‚Р° X
+		int		NN, // Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ С†РёРєР»Р°
+				I1; // РЎС‡С‘С‚С‡РёРє С†РёРєР»Р°
+		double *PXT, // РњР°СЃСЃРёРІ Р°СЂРіСѓРјРµРЅС‚РѕРІ X
+				**PZT, // РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёР№
+				*PYT; // РњР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёРё Y
+		DateTime BT, // Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р° РїСЂРѕС†РµСЃСЃР°
+				FT; // Р’СЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РїСЂРѕС†РµСЃСЃР°
+		TimeSpan STF; // Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ РїСЂРѕС†РµСЃСЃР°
+		String ^FileN1,
+				^LineS1;
+		 const char *FileNameIn1,
+					*BufferChar1;
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm1()
 		{
@@ -88,14 +92,14 @@ namespace ProjectPO1 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -131,7 +135,7 @@ namespace ProjectPO1 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(122, 13);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Начальное значение X";
+			this->label1->Text = L"РќР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ X";
 			// 
 			// label2
 			// 
@@ -140,7 +144,7 @@ namespace ProjectPO1 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(122, 13);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Начальное занчение Y";
+			this->label2->Text = L"РќР°С‡Р°Р»СЊРЅРѕРµ Р·Р°РЅС‡РµРЅРёРµ Y";
 			// 
 			// label3
 			// 
@@ -149,7 +153,7 @@ namespace ProjectPO1 {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(115, 13);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Конечное значение X";
+			this->label3->Text = L"РљРѕРЅРµС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ X";
 			// 
 			// label4
 			// 
@@ -158,7 +162,7 @@ namespace ProjectPO1 {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(115, 13);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Конечное значение Y";
+			this->label4->Text = L"РљРѕРЅРµС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ Y";
 			// 
 			// label5
 			// 
@@ -167,7 +171,7 @@ namespace ProjectPO1 {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(44, 13);
 			this->label5->TabIndex = 4;
-			this->label5->Text = L"Начало";
+			this->label5->Text = L"РќР°С‡Р°Р»Рѕ";
 			// 
 			// label6
 			// 
@@ -176,7 +180,7 @@ namespace ProjectPO1 {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(62, 13);
 			this->label6->TabIndex = 5;
-			this->label6->Text = L"Окончание";
+			this->label6->Text = L"РћРєРѕРЅС‡Р°РЅРёРµ";
 			// 
 			// label7
 			// 
@@ -185,7 +189,7 @@ namespace ProjectPO1 {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(111, 13);
 			this->label7->TabIndex = 6;
-			this->label7->Text = L"Продолжительность";
+			this->label7->Text = L"РџСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ";
 			// 
 			// label8
 			// 
@@ -194,7 +198,7 @@ namespace ProjectPO1 {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(128, 13);
 			this->label8->TabIndex = 7;
-			this->label8->Text = L"Размерность массивов";
+			this->label8->Text = L"Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°СЃСЃРёРІРѕРІ";
 			// 
 			// label9
 			// 
@@ -203,7 +207,7 @@ namespace ProjectPO1 {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(110, 13);
 			this->label9->TabIndex = 8;
-			this->label9->Text = L"Количество потоков";
+			this->label9->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕС‚РѕРєРѕРІ";
 			// 
 			// label10
 			// 
@@ -230,7 +234,7 @@ namespace ProjectPO1 {
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(110, 13);
 			this->label12->TabIndex = 11;
-			this->label12->Text = L"Количество потоков";
+			this->label12->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕС‚РѕРєРѕРІ";
 			// 
 			// label13
 			// 
@@ -311,7 +315,7 @@ namespace ProjectPO1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 21;
-			this->button1->Text = L"Начать";
+			this->button1->Text = L"РќР°С‡Р°С‚СЊ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
@@ -321,7 +325,7 @@ namespace ProjectPO1 {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 22;
-			this->button2->Text = L"Закрыть";
+			this->button2->Text = L"Р—Р°РєСЂС‹С‚СЊ";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm1::button2_Click);
 			// 
@@ -360,79 +364,131 @@ namespace ProjectPO1 {
 
 		}
 #pragma endregion
+	public: void DoWork(int tNN, double* tXT, double* tYT, double** tZT)
+	{
+		int I2, J2; // РЎС‡С‘С‚С‡РёРєРё С†РёРєР»РѕРІ
+		// Р¦РёРєР» РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ С„СѓРЅРєС†РёРё
+		for (I2 = 1; I2 <= tNN - 1; I2++) // Р’РЅРµС€РЅРёР№ С†РёРєР» РїРѕ СЃС‚СЂРѕРєР°Рј РјР°СЃСЃРёРІР° Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёРё tZT
+		{
+		for (J2 = 1; J2 <= tNN - 1; J2++) // Р’РЅСѓС‚СЂРµРЅРЅРёР№ С†РёРєР» РїРѕ СЌР»РµРјРµРЅС‚Р°Рј СЃС‚СЂРѕРє РјР°СЃСЃРёРІР° Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёРё tZT
+		{
+			PZT[I2][J2] = 0.5 * (cos(2 * pow((PXT[I1] / 3), 3)) - log10(sin(PXT[I1])) + 1);
+			if (Convert::ToInt32(PZT[I2]) > (this->progressBar1->Value + this->progressBar1->Step))
+			{
+				// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ С†РёРєР»Р° Р±РѕР»СЊС€Рµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+				this->progressBar1->Value += this->progressBar1->Step;
+				// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+				this->progressBar1->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+				FT = DateTime::Now; // РР·РІР»РµС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё
+				TimeSpan STF = FT - BT; // Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµСЂРІР°Р»Р° РІСЂРµРјРµРЅРё
+				this->label11->Text = STF.ToString(); // Р’С‹РІРѕРґ Р·РЅР°С‡РµРЅРёСЏ РёРЅС‚РµСЂРІР°Р»Р° РІСЂРµРјРµРЅРё РІ РјРµС‚РєСѓ label11
+				this->label11->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ РјРµС‚РєРё label11
+			} // РљРѕРЅРµС† СѓСЃР»РѕРІРёСЏ if (Convert::ToInt32(I1) > (this-> progressBar1->Value + this->progressBar1->Step))
+		} // РљРѕРЅРµС† С†РёРєР»Р° for (J2 = 1; J2 <= tNN - 1; J2++)
+		} // РљРѕРЅРµС† С†РёРєР»Р° for (I2 = 1; I2 <= tNN - 1; I2++)
+		std::ofstream FileStreamOut1; // Р’С‹С…РѕРґРЅРѕР№ РїРѕС‚РѕРє РґР»СЏ С„Р°Р№Р»Р°
+		std::string BufferString1; // РџРµСЂРµРјРµРЅРЅР°СЏ BufferString РґР»СЏ СЂР°Р±РѕС‚С‹ СЃРѕ СЃС‚СЂРѕРєР°РјРё
+			FileN1 = "E://AA.txt"; // РР·РІР»РµС‡РµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° РґР°РЅРЅС‹С…
+		FileNameIn1 = (const char*)(Marshal::StringToHGlobalAnsi(FileN1)).ToPointer();
+		// РљРѕРїРёСЂРѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё FileN1 РІ FileNameIn1 РІ С„РѕСЂРјР°С‚Рµ ANSI
+			FileStreamOut1.open(FileNameIn1, std::ios::out);
+		// РћС‚РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР° FileStreamOut1 РґР»СЏ РІС‹РІРѕРґР° РІ С„Р°Р№Р»
+			for (I2 = 0; I2 <= tNN - 1; I2++) // Р’РЅРµС€РЅРёР№ С†РёРєР» РїРѕ СЃС‚СЂРѕРєР°Рј РјР°СЃСЃРёРІР° tZT
+			{
+				LineS1 = gcnew String(""); // РЎРѕР·РґР°РЅРёРµ СЃС‚СЂРѕРєРё LineS1
+			for (J2 = 0; J2 <= tNN - 1; J2++) // Р’РЅСѓС‚СЂРµРЅРЅРёР№ С†РёРєР» РїРѕ СЌР»РµРјРµРЅС‚Р°Рј СЃС‚СЂРѕРє РјР°СЃСЃРёРІР° tZT
+			{
+			if (J2 < tNN - 1) // Р”Р»СЏ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° tZT РєСЂРѕРјРµ РїРѕСЃР»РµРґРЅРµРіРѕ
+			{
+			LineS1 = LineS1 + tZT[I2][J2].ToString() + "; ";
+			// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё СЃРѕ Р·РЅР°С‡РµРЅРёСЏРјРё С„СѓРЅРєС†РёРё tZT
+			} // РљРѕРЅРµС† СѓСЃР»РѕРІРёСЏ if (J2 < tNN - 1)
+			if (J2 == tNN - 1) // Р”Р»СЏ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° tZT
+			{ 
+				LineS1 = LineS1 + tZT[I2][J2].ToString() + "; " + " I2: " + I2.ToString() + " J2: " + J2.ToString() + ";\n"; //Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё СЃРѕ Р·РЅР°С‡РµРЅРёСЏРјРё С„СѓРЅРєС†РёРё tZT
+			} // РљРѕРЅРµС† СѓСЃР»РѕРІРёСЏ if (J2 == tNN - 1)
+			} // РљРѕРЅРµС† С†РёРєР»Р° for (J2 = 1; J2 <= tNN - 1; J2++)
+			BufferChar1 = new char[LineS1->Length];
+			// РЎРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР° СЃРёРјРІРѕР»РѕРІ BufferChar1
+			BufferChar1 =(char*)(void*)Marshal::StringToHGlobalAnsi(LineS1);
+			// Р—Р°РЅРµСЃРµРЅРёРµ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ СЃС‚СЂРѕРєРё LineS1 РІ РјР°СЃСЃРёРІ СЃРёРјРІРѕР»РѕРІ BufferChar1
+			FileStreamOut1.write(BufferChar1, LineS1->Length);
+			// Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° СЃРёРјРІРѕР»РѕРІ BufferChar1 РІ РїРѕС‚РѕРє
+			Marshal::FreeHGlobal(IntPtr((void*)BufferChar1));
+			// РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё, РІС‹РґРµР»РµРЅРЅРѕР№ РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ СЃС‚СЂРѕРєРё
+			} // РљРѕРЅРµС† С†РёРєР»Р° for (I2 = 1; I2 <= tNN - 1; I2++)
+		FileStreamOut1.close(); // Р—Р°РєСЂС‹С‚РёРµ РїРѕС‚РѕРєР° FileStreamOut1 РґР»СЏ РІС‹РІРѕРґР° РІ С„Р°Р№Р»
+			Marshal::FreeHGlobal(IntPtr((void*)FileNameIn1));
+		// РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё, РІС‹РґРµР»РµРЅРЅРѕР№ РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ СЃС‚СЂРѕРєРё
+	}
 	
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		BT = DateTime::Now; // Извлечение текущего значения времени
-		this->label10->Text = BT.ToLongTimeString(); // Вывод значения времени в метку label10
-		this->label10->Refresh(); // Обновление метки label10
-		// Формирование значений аргументов функции
-		MaxX = Convert::ToDouble(this->textBox3->Text); // Ввод максимального значения Х
-			MinX = Convert::ToDouble(this->textBox1->Text); // Ввод минимального значения Х
-			MaxY = Convert::ToDouble(this->textBox4->Text); // Ввод максимального значения Y
-			MinY = Convert::ToDouble(this->textBox2->Text); // Ввод минимального значения Y
-			NN = Convert::ToInt32(this->textBox5->Text); // Ввод размерности массивов
-			this->progressBar1->Maximum = Convert::ToInt32(NN); // Формирование максимального значения полосы прогресса
+		BT = DateTime::Now; // РР·РІР»РµС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё
+		this->label10->Text = BT.ToLongTimeString(); // Р’С‹РІРѕРґ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё РІ РјРµС‚РєСѓ label10
+		this->label10->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ РјРµС‚РєРё label10
+		// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ Р·РЅР°С‡РµРЅРёР№ Р°СЂРіСѓРјРµРЅС‚РѕРІ С„СѓРЅРєС†РёРё
+		MaxX = Convert::ToDouble(this->textBox3->Text); // Р’РІРѕРґ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РҐ
+			MinX = Convert::ToDouble(this->textBox1->Text); // Р’РІРѕРґ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РҐ
+			MaxY = Convert::ToDouble(this->textBox4->Text); // Р’РІРѕРґ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ Y
+			MinY = Convert::ToDouble(this->textBox2->Text); // Р’РІРѕРґ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ Y
+			NN = Convert::ToInt32(this->textBox5->Text); // Р’РІРѕРґ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё РјР°СЃСЃРёРІРѕРІ
+			this->progressBar1->Maximum = Convert::ToInt32(NN); // Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
 			this->progressBar1->Step = Convert::ToInt32(NN / 100);
 
-		// Формирование шага значения полосы прогресса
-			this->progressBar1->Minimum = 0; // Формирование минимального значения полосы прогресса
-			this->progressBar1->Value = 0; // Установка текущего значения полосы прогресса в 0
-			PXT = new double[NN]; // Выделение памяти для аргументов функции
-			PYT = new double[NN]; // Выделение памяти для значений функции
-			PZT = new double* [NN]; // выделение памяти для массива значений функций
-			ShagX = (MaxX - MinX) / (NN - 1);// Формирование шага изменения аргумента Х
-			ShagY = (MaxY - MinY) / (NN - 1); // формирование шага изменений функции Y
-			PXT[0] = MinX; // Первое значение в массиве аргументов Х
-		// Цикл для формирования массива аргументов функции
-		I1 = 1; // Начальное значение счётчика цикла
-		while (I1 < NN - 1) // Цикл по массиву аргументов
-		{
-			PXT[I1] = PXT[I1 - 1] + ShagX; // Формирование элементов массива аргументов
-				if (Convert::ToInt32(I1) > (this->progressBar1->Value + this -> progressBar1->Step))
-				{
-					// Если количество шагов цикла больше значения полосы прогресса
-						this->progressBar1->Value += this->progressBar1->Step;
-					// Формирование значения полосы прогресса
-					this->progressBar1->Refresh(); // Обновление значения полосы прогресса
-						FT = DateTime::Now; // Извлечение текущего значения времени
-						TimeSpan STF = FT - BT; // Вычисление интервала времени
-						this->label11->Text = STF.ToString(); // Вывод значения интервала времени в метку label11
-						this->label11->Refresh(); // Обновление метки label11
-				} // Конец условия if (Convert::ToInt32(I1) > (this-> progressBar1->Value + this->progressBar1->Step))
-				I1++; // Наращивание значения счётчика цикла
-		} // Конец цикла while (I1 < NN - 1)
-		this->progressBar1->Value = this->progressBar1->Maximum;
-		// Формирование значения полосы прогресса
-		// Цикл для вычисления функции
-		this->progressBar1->Value = 0; // Установка текущего значения полосы прогресса в 0
-			this->progressBar1->Refresh(); // Обновление значения полосы прогресса
-			I1 = 0; // Начальное значение счётчика цикла
-		while (I1 <= NN - 1) // Цикл по массиву аргументов
-		{
-			PYT[I1] = 0.5 * (cos(2 * pow((PXT[I1]/3),3)) - log10(sin(PXT[I1]))+1);
-			if (Convert::ToInt32(I1) > (this->progressBar1->Value + this -> progressBar1->Step))
+		// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ С€Р°РіР° Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+			this->progressBar1->Minimum = 0; // Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+			this->progressBar1->Value = 0; // РЈСЃС‚Р°РЅРѕРІРєР° С‚РµРєСѓС‰РµРіРѕ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР° РІ 0
+			PXT = new double[NN]; // Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ Р°СЂРіСѓРјРµРЅС‚РѕРІ С„СѓРЅРєС†РёРё
+			PYT = new double[NN]; // Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёРё
+			PZT = new double* [NN]; // РІС‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ РјР°СЃСЃРёРІР° Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёР№
+			ShagX = (MaxX - MinX) / (NN - 1);// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ С€Р°РіР° РёР·РјРµРЅРµРЅРёСЏ Р°СЂРіСѓРјРµРЅС‚Р° РҐ
+			ShagY = (MaxY - MinY) / (NN - 1); // С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ С€Р°РіР° РёР·РјРµРЅРµРЅРёР№ С„СѓРЅРєС†РёРё Y
+			PXT[0] = MinX; // РџРµСЂРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ Р°СЂРіСѓРјРµРЅС‚РѕРІ РҐ
+			PYT[0] = MinY; // РїРµСЂРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ Р°СЂРіСѓРјРµРЅС‚РѕРІ Y
+			for (I1 = 0; I1 <= NN - 1; I1++) // Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµРјР°СЃСЃРёРІР° Р°СЂРіСѓРјРµРЅС‚РѕРІ
 			{
-				// Если количество шагов цикла больше значения полосы прогресса
-					this->progressBar1->Value += this->progressBar1->Step;
-				// Формирование значения полосы прогресса
-				this->progressBar1->Refresh(); // Обновление значения полосы прогресса
-					FT = DateTime::Now; // Извлечение текущего значения времени
-					TimeSpan STF = FT - BT; // Вычисление интервала времени
-					this->label11->Text = STF.ToString(); // Вывод значения интервала времени в метку label11
-					this->label11->Refresh(); // Обновление метки label11
-			} // Конец условия if (Convert::ToInt32(I1) > (this-> progressBar1->Value + this->progressBar1->Step))
-			I1++; // Наращивание значения счётчика цикла
-		} // Конец цикла while (I1 < NN - 1)
+			if (I1 > 0) // Р”Р»СЏ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІРѕРІ РЅР°С‡РёРЅР°СЏ СЃРѕ РІС‚РѕСЂРѕРіРѕ
+			{
+			PXT[I1] = PXT[I1 - 1] + ShagX; // Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РјР°СЃСЃРёРІР° Р°СЂРіСѓРјРµРЅС‚РѕРІ РҐ
+			PYT[I1] = PYT[I1 - 1] + ShagY; // Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РјР°СЃСЃРёРІР° Р°СЂРіСѓРјРµРЅС‚РѕРІ Y
+			}
+			PZT[I1] = new double[NN]; // Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ РјР°СЃСЃРёРІРѕРІ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚СЂРѕРє Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёРё
+			if (Convert::ToInt32(I1) > (this->progressBar1->Value + this->progressBar1->Step))
+			{
+				// Р•СЃР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ С†РёРєР»Р° Р±РѕР»СЊС€Рµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+				this->progressBar1->Value += this->progressBar1->Step;
+				// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+				this->progressBar1->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+				FT = DateTime::Now; // РР·РІР»РµС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё
+				TimeSpan STF = FT - BT; // Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµСЂРІР°Р»Р° РІСЂРµРјРµРЅРё
+				this->label11->Text = STF.ToString(); // Р’С‹РІРѕРґ Р·РЅР°С‡РµРЅРёСЏ РёРЅС‚РµСЂРІР°Р»Р° РІСЂРµРјРµРЅРё РІ РјРµС‚РєСѓ label11
+				this->label11->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ РјРµС‚РєРё label11
+			} // РљРѕРЅРµС† СѓСЃР»РѕРІРёСЏ if (Convert::ToInt32(I1) > (this-> progressBar1->Value + this->progressBar1->Step))
+			}
 
-	FT = DateTime::Now; // Извлечение текущего значения времени
-		this->label11->Text = FT.ToLongTimeString(); // Вывод значения времени в метку label11
-		this->label11->Refresh(); // Обновление метки label11
-	TimeSpan STF = FT - BT; // Вычисление интервала времени
-		this->label13->Text = STF.ToString(); // Вывод значения интервала времени в метку label13
-		this->label13->Refresh(); // Обновление метки label13
+		this->progressBar1->Value = this->progressBar1->Maximum;
+		// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР°
+		// Р¦РёРєР» РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ С„СѓРЅРєС†РёРё
+		//this->progressBar1->Value = 0; // РЈСЃС‚Р°РЅРѕРІРєР° С‚РµРєСѓС‰РµРіРѕ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕСЃС‹ РїСЂРѕРіСЂРµСЃСЃР° РІ 0
+		
+		DoWork(NN, PXT, PYT, PZT);
+		delete[]PXT; // РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ Р°СЂРіСѓРјРµРЅС‚РѕРІ X
+		delete[]PYT; // РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ Р°СЂРіСѓРјРµРЅС‚РѕРІ Y
+		for (I1 = 0; I1 <= NN - 1; I1++) // Р¦РёРєР» РґР»СЏ РѕСЃРІРѕР±РѕР¶РґРµРЅРёСЏ РїР°РјСЏС‚Рё
+		{
+		delete[]PZT[I1]; // РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ РјР°СЃСЃРёРІРѕРІ СЌР»РµРјРµРЅС‚РѕРІ Р·РЅР°С‡РµРЅРёР№ С„СѓРЅРєС†РёРё
+		}
+		delete[]PZT; // РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё РґР»СЏ СѓРєР°Р·Р°С‚РµР»РµР№
+
+	FT = DateTime::Now; // РР·РІР»РµС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё
+		this->label11->Text = FT.ToLongTimeString(); // Р’С‹РІРѕРґ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё РІ РјРµС‚РєСѓ label11
+		this->label11->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ РјРµС‚РєРё label11
+	TimeSpan STF = FT - BT; // Р’С‹С‡РёСЃР»РµРЅРёРµ РёРЅС‚РµСЂРІР°Р»Р° РІСЂРµРјРµРЅРё
+		this->label13->Text = STF.ToString(); // Р’С‹РІРѕРґ Р·РЅР°С‡РµРЅРёСЏ РёРЅС‚РµСЂРІР°Р»Р° РІСЂРµРјРµРЅРё РІ РјРµС‚РєСѓ label13
+		this->label13->Refresh(); // РћР±РЅРѕРІР»РµРЅРёРµ РјРµС‚РєРё label13
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	Application::Exit();
 }
 };
 }
