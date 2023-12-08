@@ -1,0 +1,9 @@
+﻿  twolab.cpp
+E:\Buslaev\2\twolab\twolab.cpp(11,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\Buslaev\2\twolab\twolab.cpp(24,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\Buslaev\2\twolab\twolab.cpp(43,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\Buslaev\2\twolab\twolab.cpp(54,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\Buslaev\2\twolab\twolab.cpp(70,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\Buslaev\2\twolab\twolab.cpp(100,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\Buslaev\2\twolab\twolab.cpp(149,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  twolab.vcxproj -> E:\Buslaev\2\twolab\x64\Debug\twolab.exe
