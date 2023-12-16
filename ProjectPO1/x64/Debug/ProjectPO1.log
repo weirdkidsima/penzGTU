@@ -1,5 +1,11 @@
 ﻿  MyForm.cpp
+E:\comanddev\ProjectPO1\MyForm1.h(133,158): warning C4552: "+": результат выражения не используется
+  (компиляция исходного файла "MyForm.cpp")
+  
   MyForm1.cpp
+E:\comanddev\ProjectPO1\MyForm1.h(133,158): warning C4552: "+": результат выражения не используется
+  (компиляция исходного файла "MyForm1.cpp")
+  
   Создание кода...
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   ProjectPO1.vcxproj -> E:\comanddev\ProjectPO1\x64\Debug\ProjectPO1.exe

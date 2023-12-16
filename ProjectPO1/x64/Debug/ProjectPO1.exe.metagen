@@ -15,6 +15,17 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class ProjectPO1.ThreadCallBack: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32, Double**): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Int32, Double**, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class ProjectPO1.ThreadWithState: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Double*, Double*, ProjectPO1.ThreadCallBack): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ThreadDoWork(): PrivateScope, Public, HideBySig
 Class ProjectPO1.MyForm1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -24,13 +35,25 @@ Class ProjectPO1.MyForm1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Double MaxY : Public
     Double MinY : Public
     Double ShagX : Public
+    Double ShagY : Public
     Int32 NN : Public
     Int32 I1 : Public
+    Int32 J1 : Public
     Double* PXT : Public
     Double* PYT : Public
     System.DateTime BT : Public
     System.DateTime FT : Public
     System.TimeSpan STF : Public
+    System.String FileN1 : Public
+    System.String LineS1 : Public
+    SByte* FileNameIn1 : Public
+    SByte* BufferChar1 : Public
+    ProjectPO1.ThreadWithState tstat : Public
+    System.Threading.Thread thred : Public
+    Double** PZT : Public, Static
+  Methods:
+    DoWork(Int32, Double*, Double*, Double**): PrivateScope, Public, HideBySig
+    tcallRes(Int32, Double**): PrivateScope, Public, Static, HideBySig
 Class ProjectPO1.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

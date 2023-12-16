@@ -336,5 +336,5 @@ namespace ProjectPO1 {
 	private: System::Void ðåøåíèåToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		Mf1->Show();
 	}
-};
+	};
 };
