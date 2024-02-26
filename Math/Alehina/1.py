@@ -8,7 +8,7 @@ U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 # Функция для вывода битовой шкалы множества
 def print_bit_scale(s, name):
     bit_scale = []
-    for i in range(1, max(s) + 1):
+    for i in range(1, max(U) + 1):
         if i in s:
             bit_scale.append('1')
         else:
