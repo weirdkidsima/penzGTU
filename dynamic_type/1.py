@@ -2,11 +2,11 @@ import asyncio
 import time
 import logging
 
-# Настройка логирования
+# 3 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-# Задача 1: Планирование параллельных задач
+# 1
 async def task_coroutine(task_id, delay):
     start_time = time.time()
     logger.debug(f"Задача {task_id} стартовала в {time.strftime('%X')}")
@@ -16,7 +16,7 @@ async def task_coroutine(task_id, delay):
     logger.debug(f"Задача {task_id} завершена в {time.strftime('%X')}, время выполнения: {execution_time:.2f} сек")
     return task_id, execution_time
 
-# Задача 2: Отмена бесконечной задачи
+# 2
 async def infinite_task():
     try:
         while True:
@@ -25,7 +25,6 @@ async def infinite_task():
     except asyncio.CancelledError:
         logger.debug("Бесконечная задача отменена")
 
-# Основная функция
 async def main():
     start_time = time.time()
 
@@ -42,7 +41,7 @@ async def main():
     except asyncio.CancelledError:
         logger.debug("Бесконечная задача была успешно отменена")
 
-    # Вывод результатов
+    # 4
     total_time = time.time() - start_time
     logger.debug(f"Общее время выполнения программы: {total_time:.2f} сек")
     logger.debug(f"Результаты выполнения задач: {results}")
